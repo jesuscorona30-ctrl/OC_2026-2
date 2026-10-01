@@ -7,7 +7,8 @@ _start:
     ; --- IMPRIMIR CADENA COMPLETA ---
     mov edx, msg          ; edx = dirección de la cadena msg
     call puts             ; imprime cadena
-
+    mov byte [edx] , 'Z'
+gti
     ; --- FIN DE PROGRAMA ---
     mov eax, 1            ; Llamada sys_exit
 	xor ebx, ebx          ; return 0
