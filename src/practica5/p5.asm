@@ -9,15 +9,15 @@ _start:
     call puts             ; imprime cadena
     mov byte[edx], 'Z'    ; Inciso a) direccionamiento directo
     call puts
-    mov ebp, msg          ; Inciso b) direccionamiento con base
-    add ebp, 23           ; Apunta a la ubicacion de x
-    mov byte[ebp], 'X'
+    add edx, 23           ; Inciso b) direccionamiento con base
+    mov byte[edx], 'X'
+    mov edx,msg           ; Restauramos su valor inicial de la cadena para su impresion
     call puts
     mov byte [edx+26], '@' ; Inciso c) direccionamiento con base + desplazamiento
     call puts
-    mov ecx,25             ; Indice almacenada en un registro
-    mov al, 'Z'            ; Valor Z almacenada en otro registro
-    mov [edx+ecx], al      ; Inciso d) direccionamiento con base + indice
+    mov ecx,25                 ; Indice almacenada en un registro
+    mov al, 'Z'                ; Caracter Z en al
+    mov byte[edx+ecx], al      ; Inciso d) direccionamiento con base + indice
     call puts
     mov ecx,12             ; Indice contenida en un registro
     mov al, 'P'            ; Valor P contenida en otro registro

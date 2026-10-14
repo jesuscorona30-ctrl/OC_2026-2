@@ -23,10 +23,6 @@ _start:
     mov edx, msg2
     call puts
     mov edx, cadena
-    call puts    
-    mov edx, msg2
-    call puts
-    mov edx, cadena
     call minus
     call puts
     mov edx, msg2
@@ -143,5 +139,10 @@ _start:
 
     .fin_borrar: ret 
 
+        ; Poner antes de ejecutar:
+        ; sudo apt update
+        ; sudo apt install nasm
+        
         ; Compilar: make -C src/practica6
         ; Ejecutar: make -C src/practica6 run
+         
