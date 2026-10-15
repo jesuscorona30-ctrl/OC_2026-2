@@ -56,9 +56,18 @@ _start:
     .sig:           call putchar ; Imprime el caracter almacenado en AL
                     cmp al, ln  ; Comprobar si es un salto de linea
                     je .salir ; Si es /n salimos del ciclo
-                    mov [cadena+ebx], al ; Almacenmos el caracter en la direccion de la cadena
-                    inc ebx ;i++
-                    loop .continuar ; se repite
+                    cmp al,48
+                    jae .seguir
+                    jmp .continuar
+
+    .seguir:        cmp al,57
+                    jle .guardar_en_cadena
+                    jmp .continuar
+
+    .guardar_en_cadena:
+                        mov [cadena+ebx], al ; Almacenmos el caracter en la direccion de la cadena
+                        inc ebx ;i++
+                        loop .continuar ; se repite
                     
     
     .salir:         mov byte [cadena+ebx], ln   ; Almacenmos el caracter nueva linea
