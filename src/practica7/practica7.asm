@@ -199,7 +199,7 @@ ATOI:
         ja .aplicar_signo
 
         sub edx,'0'             ;Convertimos de ASCII a valor numerico
-        imul eax,10             ; Multiplicar el registro x10
+        mul eax,10             ; Multiplicar el registro x10
         add eax,edx             ; Sumar el nuevo digito
 
         inc ecx  ;Incrementamos contador
