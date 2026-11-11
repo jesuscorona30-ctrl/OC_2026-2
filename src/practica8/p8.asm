@@ -24,12 +24,6 @@ _start:
     call puts
     mov edx,cadena
     call puts
-    
-    ;call getche
-    ;call getche
-    ;call getche
-    ;call getche
-    ;call getche
    
     
     
